@@ -1,5 +1,5 @@
 # _Old_scripts
-These are a collection of old scripts that I developed or helped develop for past jobs and projects. Most are for geospatial processing, using arcpy, or other basic OS functions to process image files.
+These are a collection of old scripts that I developed or helped develop for past jobs and projects. Most are for geospatial processing, QA/QC, or other basic OS functions to automate repetitive processes.
 
 Please do not use them in any way. They are not meant for use, just for posterity sake and remembrance, really.
 
