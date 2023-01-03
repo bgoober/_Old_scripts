@@ -1,3 +1,4 @@
+#!/bin/bash
 
 
 fetchd config chain-id dorado-1

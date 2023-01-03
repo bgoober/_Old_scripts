@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 Cleaned
 
 # compile wasm - run this in your smart contract folder

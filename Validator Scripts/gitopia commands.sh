@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 curl https://rpc-dorado.fetch.ai:443/genesis | jq '.result.genesis' > ~/.fetchd/config/genesis.json
 
 
