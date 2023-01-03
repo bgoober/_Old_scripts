@@ -1,0 +1,47 @@
+git clone https://github.com/cosmos/gaia.git && cd gaia && make install
+
+
+gaiad init "Ben_test_val_1" --chain-id dvs-protocol-v1
+
+
+gaiad add-genesis-account shrug_test_1 1000000000uatom --keyring-backend os|~/.gaia/config/priv_validator_key.json
+
+
+# Create the gentx.
+# Note, your gentx will be rejected if you use any amount greater than 1000000000uatom.
+gaiad gentx shrug_test_1 1000000000uatom --output-document=gentx.json \
+  --chain-id=dvs-protocol-v1 \
+  --moniker="Ben_test_val_1" \
+  --website="https://gorgeous-penalty-e5f.notion.site/Test-Notion-Site-d53a3f11e90a40e8a253322041d46595" \
+  --details="This is a test validator that will be torn down soon." \
+  --commission-rate="0.10" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.01" \
+  --min-self-delegation="1" \
+  --from=shrug_test_1
+  
+  
+# --keyring-backend os|~/.gaia/config/priv_validator_key.json
+  
+  
+# Validator private key file location
+~/.gaia/config/priv_validator_key.json
+
+
+# CHAIN IDS ARE DIFFERENT BETWEEN GENTX AND CREATE-VALIDATOR COMMANDS
+
+
+# create the validator with this transaction after network is live
+gaiad tx staking create-validator \
+  --amount=1000000000uatom \
+  --pubkey=$(gaiad tendermint show-validator) \
+  --chain-id=dvs-course-testnet-1 \
+  --moniker="Ben_test_val_1" \
+  --website="https://gorgeous-penalty-e5f.notion.site/Test-Notion-Site-d53a3f11e90a40e8a253322041d46595" \
+  --commission-rate="0.10" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.01" \
+  --min-self-delegation="1" \
+  --gas="auto" \
+  --gas-prices="0.0025uatom" \
+  --from=shrug_test_1

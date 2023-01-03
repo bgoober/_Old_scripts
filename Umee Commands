@@ -1,0 +1,6 @@
+Congratulations! You have successfully completed setting up an Umee full node!
+The umeed service is currently running in the background
+To see the status of the umee daemon, run the following command: 'sudo systemctl status umeed'
+To see the live logs from the umee daemon, run the following command: 'journalctl -u umeed -f'
+In order to use cosmovisor/umeed from the cli, either reload your terminal or refresh your profile with: 'source ~/.profile'
+
